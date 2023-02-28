@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="text">
+        <button>search</button>
+    </form>
+    <div id="ans">
+
+    </div>
+    <script>
+       let input = document.querySelector('input')
+       let form = document.querySelector('form')
+       let ans = document.getElementById('ans')
+       form.addEventListener('submit', weatherAPI)
+
+       async function weatherAPI(e){
+        e.preventDefault()
+        let res =  await fetch(`https://api.weatherapi.com/v1/current.json?key=1868eecae1ae49ecb7262531232802&q=${input.value}&aqi=yes`)
+        let data = await res.json()
+console.log(data)
+        ans.innerText = data.location.name +"  "+ data.current.temp_c +"C"
+       }
+    </script>
+</body>
+</html>
