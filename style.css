@@ -75,3 +75,34 @@ iframe:nth-child(even) {
     flex-direction: column;
     justify-content: space-between;
 }
+@media (max-width:834px) {
+    body{
+        height: 100vh;
+        padding: 10px;
+    }
+    .container{
+        align-items: center;
+        flex-direction: column-reverse;
+        padding: 10px;
+    }
+    .timeZoneBox, #state{
+        display: none;
+    }
+    form{
+        padding-top: 10px;
+        width: 90%;
+    }
+    .ans{
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+    }
+}
+@media (max-width:1000px) {
+    #locationFamily{
+        flex-direction: column;
+    }
+    .timeZoneBox{
+        display: none;
+    }
+}
