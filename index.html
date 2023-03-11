@@ -1,32 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <title>Weather APP</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <form>
-        <input type="text">
-        <button>search</button>
-    </form>
-    <div id="ans">
+    <h1 class="text-center text-light" style="margin-bottom: 10px;"><u>Weather APP</u></h1>
+    <div class="container">
+        <span class="timeZoneBox">
+            <span class="timeZone">
+                <h3>London</h3>
+                <iframe
+                    src="https://free.timeanddate.com/clock/i8r9m01j/szw130/szh130/hoc000/hbw0/hfc09f/cf100/hnc07c/hwc000/facfff/fnu2/fdi76/mqcfff/mqs4/mql18/mqw4/mqd60/mhcfff/mhs4/mhl5/mhw4/mhd62/mmv0/hhcfff/hhs1/hhb10/hmcfff/hms1/hmb10/hscfff/hsw3"
+                    frameborder="0" width="130" height="130"></iframe>
 
+                <iframe src="https://free.timeanddate.com/clock/i8qag6nk/n85" frameborder="0" width="130"
+                    height="19"></iframe>
+            </span>
+            <span class="timeZone">
+                <h3>India</h3>
+                <iframe
+                    src="https://free.timeanddate.com/clock/i8r9luhd/n1632/szw130/szh130/hoc009/hbw0/hfc9ff/cf100/hnc0f9/hwc000/fan2/fas16/fac555/fdi60/mqcf0f/mqs4/mql2/mqw4/mqd78/mhcf90/mhs4/mhl3/mhw4/mhd78/mmv0/hhc990/hhs2/hmc990/hms2/hscf09"
+                    frameborder="0" width="130" height="130"></iframe>
+
+                <iframe src="https://free.timeanddate.com/clock/i8qaftan/n1833" frameborder="0" width="130"
+                    height="19"></iframe>
+            </span>
+            <span class="timeZone">
+                <h3>America</h3>
+                <iframe
+                    src="https://free.timeanddate.com/clock/i8r9m20q/n5946/szw130/szh130/hoc00f/hbw0/hfc000/cf100/hgr0/facf90/mqcfff/mql6/mqw2/mqd74/mhcfff/mhl6/mhw1/mhd74/mmcf90/mml4/mmw1/mmd74/hhcfff/hmcfff"
+                    frameborder="0" width="130" height="130"></iframe>
+
+                <iframe src="https://free.timeanddate.com/clock/i8qagjav/n179" frameborder="0" width="130"
+                    height="19"></iframe>
+            </span>
+        </span>
+        <form>
+            <input type="text" class="form-control" placeholder="Enter City Name">
+            <div class="right">
+                <button class="btn btn-primary">Search Weather</button>
+            </div>
+        </form>
+        <span>
+         <button onclick="mode()" class="btn btn-primary" id="mode">Night</button>
+        </span> 
     </div>
-    <script>
-       let input = document.querySelector('input')
-       let form = document.querySelector('form')
-       let ans = document.getElementById('ans')
-       form.addEventListener('submit', weatherAPI)
-
-       async function weatherAPI(e){
-        e.preventDefault()
-        let res =  await fetch(`https://api.weatherapi.com/v1/current.json?key=1868eecae1ae49ecb7262531232802&q=${input.value}&aqi=yes`)
-        let data = await res.json()
-console.log(data)
-        ans.innerText = data.location.name +"  "+ data.current.temp_c +"C"
-       }
+    <div class="ans">
+        <span>
+            <span class="main">
+                <img id="img">
+                <h1 id="tempC"></h1>
+            <h1><sup> &nbsp;o</sup>C</h1>
+            </span>
+            <span style="display: flex;">
+                <h2 id="tempF"></h2>
+            <h2><sup> &nbsp;o</sup>F</h2>
+        </span>
+            <span id="locationFamily">
+                <h2 id="cityName"></h2>
+                <h2 id="state"></h2>
+                <h2 id="country"></h2>
+            </span>
+        </span>
+        <span class="mainSide">
+            <h3 id="lastUpdateTimeDate" class="btn btn-danger"></h3>
+            <h3 id="state"></h3>
+            <h3 id="country"></h3>
+            <h3 id="time"></h3>
+            <h3 id="date"></h3>
+            <h3 id="timeZone"></h3>
+        </span>
+    </div>
+    <script src="main.js">
+    
     </script>
 </body>
+
 </html>
