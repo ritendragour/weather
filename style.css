@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    border: 1px solid red;
 }
 body{
     background: rgb(2,0,36);
@@ -93,6 +94,9 @@ iframe:nth-child(even) {
     color: aqua;
 }
 @media (max-width:864px) {
+    header{
+        padding: 20px;
+    }
     body{
         height: 100vh;
         padding: 20px;
