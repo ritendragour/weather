@@ -6,13 +6,18 @@
 body{
     background: rgb(2,0,36);
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(28,165,205,1) 85%, rgba(0,212,255,1) 100%);
-    padding: 60px;
+    padding: 20px 60px;
     min-height: 100vh;
     background-image: url("https://images.pexels.com/photos/912364/pexels-photo-912364.jpeg?auto=compress&cs=tinysrgb&w=600");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     color: rgb(226, 219, 219);
+}
+header{
+    display: flex;
+    padding: 20px 100px;
+    justify-content: space-between;
 }
 .container{
     justify-content: space-between;
@@ -42,6 +47,9 @@ form{
 .timeZoneBox h3{
     border: 1px solid rgb(175, 164, 164);
     text-align: center;
+}
+iframe:nth-child(odd) {
+    border: 1px solid black;
 }
 iframe:nth-child(even) {
     margin: 10px 0px;
@@ -75,17 +83,26 @@ iframe:nth-child(even) {
     flex-direction: column;
     justify-content: space-between;
 }
-@media (max-width:834px) {
+.fa{
+    font-size: 40px;
+    background: transparent;
+    color: yellow;
+    border: none;
+}
+.fa-moon-o{
+    color: aqua;
+}
+@media (max-width:864px) {
     body{
         height: 100vh;
-        padding: 10px;
+        padding: 20px;
     }
     .container{
         align-items: center;
         flex-direction: column-reverse;
         padding: 10px;
     }
-    .timeZoneBox, #state{
+    .timeZoneBox{
         display: none;
     }
     form{
@@ -95,14 +112,16 @@ iframe:nth-child(even) {
     .ans{
         flex-direction: column;
         margin: 0;
-        padding: 0;
+        padding: 10;
     }
 }
-@media (max-width:1000px) {
+@media (max-width:1300px) {
     #locationFamily{
         flex-direction: column;
     }
-    .timeZoneBox{
+}
+@media (max-width:1400px) {
+    .res{
         display: none;
     }
 }

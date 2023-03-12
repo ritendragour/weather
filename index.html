@@ -8,6 +8,7 @@
     <meta name="description" content="ritendra gour">
     <meta name="keywords" content="weather">
     <meta name="author" content="ritendra gour">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <title>Weather APP</title>
@@ -15,7 +16,12 @@
 </head>
 
 <body>
-    <h1 class="text-center text-light" style="margin-bottom: 10px;"><u>Weather APP</u></h1>
+    <header>
+    <button class="fa fa-cloud-sun"></button>
+    <h1 style="margin-bottom: 10px;"><u>Weather APP</u></h1>
+    <button onclick="mode()" class="fa fa-moon-o" id="mode"></button>
+    </header>
+
     <div class="container">
         <span class="timeZoneBox">
             <span class="timeZone">
@@ -25,7 +31,7 @@
                     frameborder="0" width="130" height="130"></iframe>
 
                 <iframe src="https://free.timeanddate.com/clock/i8qag6nk/n85" frameborder="0" width="130"
-                    height="19"></iframe>
+                    height="19" class="bor"></iframe>
             </span>
             <span class="timeZone">
                 <h3>India</h3>
@@ -36,7 +42,7 @@
                 <iframe src="https://free.timeanddate.com/clock/i8qaftan/n1833" frameborder="0" width="130"
                     height="19"></iframe>
             </span>
-            <span class="timeZone">
+            <span class="timeZone res">
                 <h3>America</h3>
                 <iframe
                     src="https://free.timeanddate.com/clock/i8r9m20q/n5946/szw130/szh130/hoc00f/hbw0/hfc000/cf100/hgr0/facf90/mqcfff/mql6/mqw2/mqd74/mhcfff/mhl6/mhw1/mhd74/mmcf90/mml4/mmw1/mmd74/hhcfff/hmcfff"
@@ -52,16 +58,13 @@
                 <button class="btn btn-primary">Search Weather</button>
             </div>
         </form>
-        <span>
-         <button onclick="mode()" class="btn btn-primary" id="mode">Night</button>
-        </span> 
     </div>
     <div class="ans">
         <span>
             <span class="main">
                 <img id="img">
                 <h1 id="tempC"></h1>
-            <h1><sup> &nbsp;o</sup>C</h1>
+            <h1><sup> &nbsp;o</sup>C&nbsp;&nbsp;</h1>
             </span>
             <span style="display: flex;">
                 <h2 id="tempF"></h2>

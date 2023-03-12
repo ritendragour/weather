@@ -22,7 +22,7 @@ async function weatherAPI(e) {
         var res = await fetch(`https://api.weatherapi.com/v1/current.json?key=${key}&q=${input.value}&aqi=yes`)
         var data = await res.json()
 
-        //ans 
+        //ans indore
         img.setAttribute('src', `${data.current.condition.icon}`)
 
         cityName.innerText = data.location.name + " , "
@@ -42,23 +42,23 @@ async function weatherAPI(e) {
     }
 }
 
-
 let bg = document.querySelector('body')
+let clicks = 0;
 function mode() {
     let modeButton = document.getElementById('mode')
-
-    if (modeButton.textContent === "Night") {
-
-        bg.style.backgroundImage = 'none'
-        bg.style.color = 'black'
-        bg.style.backgroundColor = 'white'
-        modeButton.innerText = "Day"
-    } else if (modeButton.textContent === "Day") {
+    
+    if ((clicks += 1) % 2 !==0) {
+        modeButton.className = "fa fa-sun-o"
         bg.style.backgroundImage = 'none'
         bg.style.color = 'white'
         ans.style.color = 'white'
         bg.style.backgroundColor = 'black'
-        modeButton.innerText === "Night"
-        mode()
+
+    } else{
+        modeButton.className = "fa fa-moon-o"
+        bg.style.backgroundImage = 'none'
+        bg.style.color = 'black'
+        ans.style.color = 'black'
+        bg.style.backgroundColor = 'white'
     }
 }
